@@ -16,6 +16,7 @@ def generate_root_ca_certificate():
         x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, u"IT Department"),
         x509.NameAttribute(NameOID.COMMON_NAME, u"Example Root CA"),
     ])
+    
     certificate_builder = (
         x509.CertificateBuilder()
         .subject_name(subject)
