@@ -16,7 +16,7 @@ def generate_root_ca_certificate():
         x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, u"IT Department"),
         x509.NameAttribute(NameOID.COMMON_NAME, u"Example Root CA"),
     ])
-    
+
     certificate_builder = (
         x509.CertificateBuilder()
         .subject_name(subject)
@@ -27,6 +27,7 @@ def generate_root_ca_certificate():
         .not_valid_after(datetime.datetime.utcnow() + datetime.timedelta(days=3650))
         .add_extension(x509.BasicConstraints(ca=True, path_length=None), critical=True)
     )
+    
     certificate = certificate_builder.sign(private_key=private_key, algorithm=hashes.SHA256())
     with open("rootCA.pem", "wb") as cert_file:
         cert_file.write(certificate.public_bytes(serialization.Encoding.PEM))
@@ -38,6 +39,7 @@ def generate_root_ca_certificate():
                 encryption_algorithm=serialization.NoEncryption()
             )
         )
+
     print("Root CA certificate (rootCA.pem) and private key (rootCA-key.pem) have been generated.")
 
 if __name__ == "__main__":
