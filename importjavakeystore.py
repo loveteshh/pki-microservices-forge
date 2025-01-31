@@ -6,10 +6,7 @@ import sys
 import os
 
 def jks_to_pem(keystore_path, keystore_password, output_dir):
-    """
-    Loads a JKS keystore, extracts certificates, and writes them as PEM files
-    to the specified output directory.
-    """
+
     # Load the JKS keystore
     keystore = jks.KeyStore.load(keystore_path, keystore_password)
 
