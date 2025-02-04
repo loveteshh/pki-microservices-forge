@@ -40,7 +40,6 @@ def crt_to_pem(crt_file, pem_output):
         f.write(crypto.dump_certificate(crypto.FILETYPE_PEM, cert))
 
 if __name__ == "__main__":
-    # Example usage
     # pkcs12_to_pem('certificate.pfx', 'password', 'output.pem')
     # pem_to_pkcs12('cert.pem', 'key.pem', 'password', 'output.pfx')
     # crt_to_pem('certificate.crt', 'output.pem')
