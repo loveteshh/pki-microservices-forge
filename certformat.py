@@ -40,5 +40,7 @@ def crt_to_pem(crt_file, pem_output):
         f.write(crypto.dump_certificate(crypto.FILETYPE_PEM, cert))
 
 if __name__ == "__main__":
-    #Need to define functionality
+
+    # Need to define functionality - ongoing effort
+
     pass
